@@ -1,18 +1,3 @@
-### **Notes:**
-
--   **Banner Image:** Replace `assets/banner.png` with an actual image if you have one. This image will appear at the top of your README.
--   **Links:** Update the GitHub repository links (`https://github.com/your-username/text-to-files-extension`) with your actual repository URL.
--   **Example Usage:** Ensure the example matches the functionality of your extension.
-
----
-
-## **2. Adding an MIT `LICENSE`**
-
-Including a license is crucial as it defines how others can use, modify, and distribute your work. Here's the standard MIT License text you can use.
-
-### **`LICENSE` Content**
-
-```text
 MIT License
 
 Copyright (c) 2024 Alexander Westi Astrup
@@ -34,4 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-```

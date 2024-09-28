@@ -4,6 +4,7 @@
   "description": "Extract and generates files from text",
   "version": "0.0.1",
   "publisher": "AlexanderWestiAstrup",
+  "repository": "https://github.com/AAstrup/text-to-files-extension",
   "engines": {
     "vscode": "^1.50.0"
   },
