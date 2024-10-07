@@ -2,7 +2,7 @@
   "name": "text-to-files-extensions",
   "displayName": "Text to Files Extension",
   "description": "Extract and generates files from text",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "publisher": "AlexanderWestiAstrup",
   "repository": "https://github.com/AAstrup/text-to-files-extension",
   "engines": {

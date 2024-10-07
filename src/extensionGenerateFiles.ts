@@ -49,14 +49,14 @@ export function generateFiles(): (...args: any[]) => any {
 }
 
 async function parseAndCreateFiles(text: string): Promise<string[]> {
-    // Regular expression to match filenames and code blocks
-    const regex = /### \*\*Filename: `(.+?)`\*\*\s+```[a-z]*\s*([\s\S]+?)```/g;
+    // Updated regular expression to match the actual format
+    const regex = /#+\s*\**Filename:\s*`(.+?)`\**\s*[\r\n]+(`{3,}[a-z]*[\r\n]+([\s\S]+?)`{3,})/g;
     let match;
     const createdFiles: string[] = [];
 
     while ((match = regex.exec(text)) !== null) {
         const filename = match[1].trim();
-        let content = match[2].trim();
+        let content = match[3].trim(); // Updated index to 3 to get the code content
 
         // Remove any comment lines that duplicate the filename inside the code block
         content = removeDuplicateFilenameComments(content, filename);
