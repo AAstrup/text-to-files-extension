@@ -2,7 +2,7 @@
   "name": "text-to-files-extensions",
   "displayName": "Text to Files Extension",
   "description": "Extract and generates files from text",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "publisher": "AlexanderWestiAstrup",
   "repository": "https://github.com/AAstrup/text-to-files-extension",
   "engines": {
@@ -26,6 +26,11 @@
         "command": "extension.copyTypeScriptContent",
         "title": "Copy TypeScript Content",
         "category": "Your Extension"
+      },
+      {
+        "command": "extension.copyFileContent",
+        "title": "Copy File(s) Content",
+        "category": "File Content Copier"
       }
     ],
     "keybindings": [
@@ -50,6 +55,13 @@
         {
           "command": "extension.copyTypeScriptContent",
           "when": "editorLangId == typescript || editorLangId == typescriptreact"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "extension.copyFileContent",
+          "when": "resourceLangId != ''",
+          "group": "navigation"
         }
       ]
     },
