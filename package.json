@@ -2,7 +2,7 @@
   "name": "text-to-files-extensions",
   "displayName": "Text to Files Extension",
   "description": "Extract and generates files from text",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "AlexanderWestiAstrup",
   "repository": "https://github.com/AAstrup/text-to-files-extension",
   "engines": {
@@ -19,14 +19,25 @@
     "commands": [
       {
         "command": "extension.generateFiles",
-        "title": "Generate Files from Selection"
+        "title": "Generate Files",
+        "category": "Your Extension"
+      },
+      {
+        "command": "extension.copyTypeScriptContent",
+        "title": "Copy TypeScript Content",
+        "category": "Your Extension"
       }
     ],
     "keybindings": [
       {
         "command": "extension.generateFiles",
-        "key": "ctrl+alt+g",
-        "when": "editorTextFocus && editorHasSelection"
+        "when": "editorTextFocus && editorHasSelection",
+        "key": "ctrl+alt+g"
+      },
+      {
+        "command": "extension.copyTypeScriptContent",
+        "when": "editorLangId == typescript || editorLangId == typescriptreact",
+        "group": "navigation"
       }
     ],
     "menus": {
@@ -35,8 +46,23 @@
           "command": "extension.generateFiles",
           "when": "editorHasSelection",
           "group": "navigation"
+        },
+        {
+          "command": "extension.copyTypeScriptContent",
+          "when": "editorLangId == typescript || editorLangId == typescriptreact"
         }
       ]
+    },
+    "configuration": {
+      "type": "object",
+      "title": "Your Extension Configuration",
+      "properties": {
+        "typescriptContentCopier.maxLineLength": {
+          "type": "number",
+          "default": 200,
+          "description": "Maximum number of lines to read from each file."
+        }
+      }
     }
   },
   "scripts": {
@@ -48,7 +74,6 @@
     "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
-    "@types/vscode": "^1.50.0",
     "@types/glob": "^7.1.3",
     "@types/mocha": "^8.0.4",
     "@types/node": "14.x",
@@ -56,6 +81,7 @@
     "glob": "^7.1.6",
     "mocha": "^8.1.3",
     "typescript": "^4.0.3",
+    "vscode": "^1.1.37",
     "vscode-test": "^1.4.0"
   }
 }
